@@ -1,5 +1,5 @@
 # The last step
-If your rootCA.pem or rootCA.key were given the "chmod a-rwx" treatment, you'll need to be root or use sudo.
+If your rootCA.pem or rootCA.key were given the `chmod a-rwx` treatment, you'll need to be root or use sudo.
 ## Sign it!
 ### On multiple lines.
 
