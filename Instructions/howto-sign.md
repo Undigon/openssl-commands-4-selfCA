@@ -7,7 +7,7 @@ If your rootCA.pem or rootCA.key were given the `chmod a-rwx` treatment, you'll 
 sudo openssl x509 -req \
 -in /path/to/server.csr \
 -extfile /path/to/server.cnf \	#Copy this from openssl.cnf (/etc/ssl/openssl.cnf) and modify it as explained before.
--extensions v3_req \ 		#This is inside device.cnf under [ v3_req ].
+-extensions v3_req \ 		#This is inside server.cnf under [ v3_req ].
 -CA /path/leading-to/rootCA.pem \
 -CAKey /path/leading-to/rootCA.key \
 -CAcreateserial \
