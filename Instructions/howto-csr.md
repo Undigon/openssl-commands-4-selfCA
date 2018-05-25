@@ -3,5 +3,5 @@
 *[Placeholder placeholder lorem ipsum lorem ipsum]*
 ## Verify it!
 ```shell-script
-openssl req -text -noout -verify -in server.example.com.csr
+openssl req -text -noout -verify -in server.csr
 ```
