@@ -20,8 +20,9 @@ sudo openssl x509 -req \
 sudo openssl x509 -req -in /path/to/server.csr -extfile /path/to/server.cnf -extensions v3_req -CA /path/leading-to/rootCA.pem -CAkey /path/leading-to/rootCA.key -CAcreateserial -out server.crt -days 366 -sha256
 ```
 ## Verify it!
+If everything went smoothly you should be able to verify that it contains everything you asked, including the *SAN*. 
 ```shell-script
 openssl x509 -text -noout -in /path/to/server.crt
 ```
 ## True last step
-If everything went smoothly you should be able to verify that it contains everything you asked, including the *SAN*. Congratulations, you can modify your `/etc/apache2/sites-enabled/default-ssl.conf` and/or restart your server with `service apache2 restart`.
+Congratulations, you can modify your `/etc/apache2/sites-enabled/default-ssl.conf` and/or restart your server with `service apache2 restart`.
