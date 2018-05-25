@@ -1,5 +1,7 @@
-## Trying to break it on multiple lines.
+# The last step
 If your rootCA.pem or rootCA.key were given the "chmod a-rwx" treatment, you'll need to be root or use sudo.
+## Sign it!
+### On multiple lines.
 
 ```shell-script
 sudo openssl x509 -req \
@@ -13,7 +15,13 @@ sudo openssl x509 -req \
 -days 366 \			#As many as you see fit, as long as it's less than the validity of the root certificate.
 -sha256				#Or any other provided it is not SHA1, it's being phased out.
 ```
-## Everything in a single line.
-```shellscript
+### Everything in a single line.
+```shell-script
 sudo openssl x509 -req -in /path/to/server.csr -extfile /path/to/server.cnf -extensions v3_req -CA /path/leading-to/rootCA.pem -CAkey /path/leading-to/rootCA.key -CAcreateserial -out server.crt -days 366 -sha256
 ```
+## Verify it!
+```shell-script
+openssl x509 -text -noout -in /path/to/server.crt
+```
+## True last step
+If everything went smoothly you should be able to verify that it contains everything you asked, including the *SAN*. Congratulations, you can modify your `/etc/apache2/sites-enabled/default-ssl.conf` and/or restart your server with `service apache2 restart`.
