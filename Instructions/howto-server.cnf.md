@@ -27,7 +27,7 @@ And immediately below that
 
 ```
 [ alt_names ]
-IP.1 = #If you need it, you can designate IP addresses. e.g. 127.0.0.1
+IP.1 = #You can designate IP addresses if you need to. e.g. 127.0.0.1
 IP.2 = #You need to designate one address per line. Try to keep it below 100.
 IP...[etcetera]
 DNS.1 = #DNS is another option. You can designate addresses like localhost or www.mysite.com
