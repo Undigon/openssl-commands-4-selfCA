@@ -9,7 +9,7 @@ sudo openssl x509 -req \
 -extfile /path/to/server.cnf \	#Copy this from openssl.cnf (/etc/ssl/openssl.cnf) and modify it.
 -extensions v3_req \ 		#This is inside server.cnf under [ v3_req ].
 -CA /path/leading-to/rootCA.pem \
--CAKey /path/leading-to/rootCA.key \
+-CAkey /path/leading-to/rootCA.key \
 -CAcreateserial \
 -out /path/to/server.crt \	#You can provide an absolute or relative path I think.
 -days 366 \			#Don't choose more days than rootCA's validity.
